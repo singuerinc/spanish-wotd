@@ -94,7 +94,7 @@ describe("<App />", () => {
   describe("load", () => {
     it("should load the default dictionary when there are no more words in local", () => {
       const wrapper = shallow(<App />);
-      const app: App = wrapper.instance();
+      const app = wrapper.instance();
       app.setState = jest.fn().mockImplementation((state, callback) => {
         if (callback) {
           callback();
@@ -104,7 +104,8 @@ describe("<App />", () => {
       wrapper.setState({
         words: [["hello", "hej", "hola"]]
       });
-      app.load();
+
+      (app as App).load();
 
       expect(app.setState).toBeCalledTimes(6);
     });

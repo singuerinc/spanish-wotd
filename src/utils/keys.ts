@@ -1,5 +1,5 @@
 const onSpacePress = (callback: () => void) => (e: KeyboardEvent) => {
-  if (e.keyCode === 32) {
+  if (e.code === "Space") {
     callback();
     return true;
   } else {
