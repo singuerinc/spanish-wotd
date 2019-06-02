@@ -125,7 +125,7 @@ class App extends React.Component<{}, IState> {
     });
   };
 
-  private load = () => {
+  public load = () => {
     const [
       [wordInSwedish, wordInEnglish, wordInSpanish],
       ...dictionary
